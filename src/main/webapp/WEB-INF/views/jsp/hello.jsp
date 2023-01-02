@@ -42,14 +42,7 @@
   <div class="row">
 	<div class="col-md-4">
 		<h2>Heading</h2>
-		<p>TERRAFORM</p>
-		<p>
-			<a class="btn btn-default" href="#" role="button">View details</a>
-		</p>
-	</div>
-	<div class="col-md-4">
-		<h2>Heading</h2>
-		<p>DEVOPS</p>
+		<p>MADHU</p>
 		<p>
 			<a class="btn btn-default" href="#" role="button">View details</a>
 		</p>
@@ -57,6 +50,13 @@
 	<div class="col-md-4">
 		<h2>Heading</h2>
 		<p>AWS</p>
+		<p>
+			<a class="btn btn-default" href="#" role="button">View details</a>
+		</p>
+	</div>
+	<div class="col-md-4">
+		<h2>Heading</h2>
+		<p>DEVOPS</p>
 		<p>
 			<a class="btn btn-default" href="#" role="button">View details</a>
 		</p>

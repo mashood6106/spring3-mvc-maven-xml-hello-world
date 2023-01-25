@@ -44,21 +44,21 @@
 		<h2>Heading</h2>
 		<p>MADHU</p>
 		<p>
-			<a class="btn btn-default" href="#" role="button">View details for madhu</a>
+			<a class="btn btn-default" href="#" role="button">View details for madhu..</a>
 		</p>
 	</div>
 	<div class="col-md-4">
 		<h2>Heading</h2>
 		<p>AWS</p>
 		<p>
-			<a class="btn btn-default" href="#" role="button">View details for aws</a>
+			<a class="btn btn-default" href="#" role="button">View details for aws..</a>
 		</p>
 	</div>
 	<div class="col-md-4">
 		<h2>Heading</h2>
 		<p>DEVOPS</p>
 		<p>
-			<a class="btn btn-default" href="#" role="button">View details fro devops</a>
+			<a class="btn btn-default" href="#" role="button">View details fro devops..</a>
 		</p>
 	</div>
   </div>

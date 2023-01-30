@@ -1,0 +1,12 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+     - name: Check out the repo
+       uses: actions/checkout@v2
+	   - name: build the app
+	     run: mvn package 

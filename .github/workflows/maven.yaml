@@ -11,4 +11,4 @@ jobs:
      - name: build the app
        run: mvn package 
      - name: tomcat deploy
-       run: curl -v -u admin:admin  -T /home/ec2-user/actions-runner/_work/spring3-mvc-maven-xml-hello-world/spring3-mvc-maven-xml-hello-world/target/target/spring3-mvc-maven-xml-hello-world-1.1-SNAPSHOT.war 'http://ec2-3-109-121-88.ap-south-1.compute.amazonaws.com:8080/manager/text/deploy?path=/jmsth39spring3'
+       run: curl -v -u admin:admin  -T /home/ec2-user/actions-runner/_work/spring3-mvc-maven-xml-hello-world/spring3-mvc-maven-xml-hello-world/target/spring3-mvc-maven-xml-hello-world-1.1-SNAPSHOT.war 'http://ec2-3-109-121-88.ap-south-1.compute.amazonaws.com:8080/manager/text/deploy?path=/jmsth39spring3'

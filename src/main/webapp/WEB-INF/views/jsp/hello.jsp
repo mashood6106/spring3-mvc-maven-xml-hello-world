@@ -14,7 +14,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="#">Spring 3 MVC Projectsssssssssss</a>
+		<a class="navbar-brand" href="#">Spring 3 MVC Projects</a>
 	</div>
   </div>
 </nav>
@@ -44,21 +44,21 @@
 		<h2>Heading</h2>
 		<p>MADHU</p>
 		<p>
-			<a class="btn btn-default" href="#" role="button">View details0</a>
+			<a class="btn btn-default" href="#" role="button">View details</a>
 		</p>
 	</div>
 	<div class="col-md-4">
 		<h2>Heading</h2>
 		<p>AWS</p>
 		<p>
-			<a class="btn btn-default" href="#" role="button">View details1</a>
+			<a class="btn btn-default" href="#" role="button">View details</a>
 		</p>
 	</div>
 	<div class="col-md-4">
 		<h2>Heading</h2>
 		<p>DEVOPS-TERRAFORM</p>
 		<p>
-			<a class="btn btn-default" href="#" role="button">View details2</a>
+			<a class="btn btn-default" href="#" role="button">View details</a>
 		</p>
 	</div>
   </div>

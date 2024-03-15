@@ -1,6 +1,6 @@
 
-@Library("mashooddevops@main") _
+@Library("makdevops@main") _
 
-pushEcrRepo(
+pushDockerHub(
 ecrRepoName: 'spring3-mvc-maven-xml-hello-world'
 )

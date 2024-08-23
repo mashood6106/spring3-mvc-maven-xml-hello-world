@@ -19,4 +19,3 @@ spec:
         image: mashood6106/spring3:v1
         ports:
         - containerPort: 8080
-

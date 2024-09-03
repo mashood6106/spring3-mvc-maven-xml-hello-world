@@ -1,11 +1,11 @@
 pipeline {
     agent any
 	
-	  environment {
+    environment {
         SONARQUBE_SERVER = 'mysonarserver'
         SONARQUBE_PROJECT_KEY = 'java-sonar-runner-simple1'
         SONARQUBE_PROJECT_NAME = 'Simple-Java-project-analyzed-with-the-SonarQube-Runner'
-		// This can be nexus3 or nexus2
+	// This can be nexus3 or nexus2
         NEXUS_VERSION = "nexus3"
         // This can be http or https
         NEXUS_PROTOCOL = "http"
@@ -15,10 +15,10 @@ pipeline {
         NEXUS_REPOSITORY = "spring3"
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "nexus_credentials"
-		registry = "mashood6106/spring3"
+	registry = "mashood6106/spring3"
         registryCredential = 'dockerhub_credentials'
         dockerImage = ''
-		KUBECONFIG = '/root/.kube/config'
+	KUBECONFIG = '/root/.kube/config'
     }
 	
     stages {
@@ -27,26 +27,24 @@ pipeline {
                 git url: 'https://github.com/mashood6106/spring3-mvc-maven-xml-hello-world.git', branch: 'master'
             }
         }
-        stage('Build') {
-		     tools {
+         stage('Build') {
+		tools {
                     jdk 'jdk11'
                   }
-            steps { 
+                 steps { 
                 sh 'mvn clean package'
+               }
             }
-        }
 		
-		stage('SonarQube Analysis') {
-		     
-			tools {
+         stage('SonarQube Analysis') {
+		     tools {
                   jdk 'jdk17'
                }
-		 
-            steps {
-                script {
-                    def scannerHome = tool 'mysonarscanner'
-                    withSonarQubeEnv(SONARQUBE_SERVER) {
-                        sh "${scannerHome}/bin/sonar-scanner " +
+		      steps {
+                           script {
+                          def scannerHome = tool 'mysonarscanner'
+                          withSonarQubeEnv(SONARQUBE_SERVER) {
+                         sh "${scannerHome}/bin/sonar-scanner " +
                            "-Dsonar.projectKey=${SONARQUBE_PROJECT_KEY} " +
                            "-Dsonar.projectName=${SONARQUBE_PROJECT_NAME} " +
                            "-Dsonar.sources=src "
@@ -55,7 +53,7 @@ pipeline {
             }
         }
 		
-		stage("publish to nexus") {
+	 stage("publish to nexus") {
             steps {
                 script {
                     // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
@@ -100,7 +98,7 @@ pipeline {
             }
         }
 		 
-		 stage('Building image') {
+	 stage('Building image') {
            steps {
              script {
                 dockerImage = docker.build registry + ":v1"
@@ -108,23 +106,23 @@ pipeline {
       }
     }
 	
-	    stage('push image') {
-      steps {
-        script {
-           docker.withRegistry( '', registryCredential ) {
-              dockerImage.push()
+	stage('push image') {
+           steps {
+             script {
+               docker.withRegistry( '', registryCredential ) {
+                  dockerImage.push()
           }
         }
       }
     }
 	
-	  stage('Remove old docker image') {
-      steps {
-        sh "docker rmi $registry:v1"
+	stage('Remove old docker image') {
+           steps {
+             sh "docker rmi $registry:v1"
       }
     }
 	
-	  stage('Apply Kubernetes Manifests') {
+	stage('Apply Kubernetes Manifests') {
             steps {
                     sh 'kubectl apply -f k8s/deployment.yaml'
                     sh 'kubectl apply -f k8s/service.yaml'

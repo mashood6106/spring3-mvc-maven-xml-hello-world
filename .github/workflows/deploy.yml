@@ -23,7 +23,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adoptopenjdk'
-	  
+      
       - name: Install Maven
         run: |
           sudo apt-get update

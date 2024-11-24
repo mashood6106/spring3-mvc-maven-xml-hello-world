@@ -36,11 +36,10 @@ jobs:
         run: |
           curl -u $TOMCAT_USER:$TOMCAT_PASSWORD \
                -T target/spring3-mvc-maven-xml-hello-world-1.1.0.war \
-               "http://$TOMCAT_HOST:$TOMCAT_PORT/manager/text/deploy?path=/spring3&update=true"
+               "http://$TOMCAT_HOST/manager/text/deploy?path=/spring3&update=true"
 
         env:
           TOMCAT_USER: ${{ secrets.TOMCAT_USER }}
           TOMCAT_PASSWORD: ${{ secrets.TOMCAT_PASSWORD }}
           TOMCAT_HOST: ${{ secrets.TOMCAT_HOST }}
-          TOMCAT_PORT: ${{ secrets.TOMCAT_PORT }}
 

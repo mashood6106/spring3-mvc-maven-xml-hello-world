@@ -36,7 +36,7 @@ jobs:
         run: |
           curl -u $TOMCAT_USER:$TOMCAT_PASSWORD \
                -T target/spring3-mvc-maven-xml-hello-world-1.1.0.war \
-               "https://0011-106-219-146-250.ngrok-free.app/manager/text/deploy?path=/spring3&update=true"
+               "https://93f9-106-219-146-250.ngrok-free.app/manager/text/deploy?path=/spring3&update=true"
 
         env:
           TOMCAT_USER: ${{ secrets.TOMCAT_USER }}

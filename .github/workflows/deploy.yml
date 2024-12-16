@@ -34,6 +34,6 @@ jobs:
 
       - name: Deploy to Tomcat
         run: |
-          curl -u admin:admin123 \
+          curl -u ${{ secrets.TOMCAT_USER }}:${{ secrets.TOMCAT_PASSWORD }} \
                -T target/spring3-mvc-maven-xml-hello-world-1.1.0.war \
                "https://7341-106-219-144-116.ngrok-free.app/manager/text/deploy?path=/spring3&update=true"
